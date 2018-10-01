@@ -1,0 +1,20 @@
+{
+  "name": "mocha-chai-knex",
+  "description": "",
+  "scripts": {
+    "postdeploy": "pg_dump $STAGING_DATABASE_URL | psql $DATABASE_URL "
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-basic"
+  ],
+  "buildpacks": [
+  ]
+}
